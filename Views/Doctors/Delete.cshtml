@@ -3,3 +3,12 @@
 }
 
 @model Doctor_Office.Models.Doctor;
+
+<h2>Are you sure you want to remove this Doctor from the database?</h2>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.DoctorId)
+    <input type="submit" value="Delete" />
+}

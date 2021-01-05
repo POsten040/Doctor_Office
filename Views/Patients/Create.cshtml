@@ -3,3 +3,13 @@
 }
 
 @model Doctor_Office.Models.Patient;
+
+<h4>Add a Patient</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Birthday)
+  @Html.TextBoxFor(model => model.Birthday)
+  <input type="submit" value="Add a Doctor">
+}

@@ -3,3 +3,13 @@
 }
 
 @model Doctor_Office.Models.Doctor;
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DoctorId)
+  <h3>Change Name:</h3>@Html.EditorFor(model => model.Name) <br/>
+  <h3>Change Specialty:</h3>@Html.EditorFor(model => model.Specialty) <br/>
+  <input type="submit" value="Save">
+}
+
+<li>@Html.ActionLink("Back to doctors", "Index")</li>

@@ -10,27 +10,28 @@
   <h3>No Doctors Here!</h3>
 }
 
-@foreach (Doctor doctor in Model)
-{
-  <div id="Doctor" class="Doctors">@Html.ActionLink($"{doctor.Name}", "Details", new { id = doctor.DoctorId })</div>
-}
 
-<div id="London" class="city">
-  <h2>London</h2>
-  <p>London is the capital of England.</p>
-</div>
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+    <button type="button" class="btn" id="newBtn">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><li>@Html.ActionLink("Add Doctor", "Create")</li>
+      </button>
 
-<div id="Paris" class="city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="city" style="display:none">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-</div>
+      <button type="button" class="btn">
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Doctors<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            @foreach (Doctor doctor in Model)
+            {
+              <button type="button" class="btn">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span><li>@Html.ActionLink($"{doctor.Name}", "Details", new { id = doctor.DoctorId })</li>
+              </button>
+            }
+          </ul>
+        </li>
+      </button>
+    </ul>
+  </div>
+</nav>
