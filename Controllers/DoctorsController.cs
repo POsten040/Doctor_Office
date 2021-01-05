@@ -8,7 +8,7 @@ namespace Doctor_Office.Controllers
 {
   public class DoctorsController : Controller
   {
-    /*private readonly Doctor_OfficeContext _db;
+    private readonly Doctor_OfficeContext _db;
     public DoctorsController(Doctor_OfficeContext db)
     {
       _db = db;
@@ -69,6 +69,6 @@ namespace Doctor_Office.Controllers
       _db.Doctors.Remove(thisDoctor);
       _db.SaveChanges();
       return RedirectToAction("Index");
-    }*/
+    }
   }
 }
