@@ -22,7 +22,7 @@ else
     @using (Html.BeginForm("DeleteDoctor", "Patients"))
     {
       @Html.Hidden("joinId", @join.DoctorPatientId)
-      <input type="submit" value="Delete"/>
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span><br><input type="submit" value="Delete"/>
     }
   }
 }

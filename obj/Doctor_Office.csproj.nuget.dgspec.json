@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\Doctor_office\\Doctor_Office.csproj": {}
+    "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\doctor_office\\Doctor_Office.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\Doctor_office\\Doctor_Office.csproj": {
+    "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\doctor_office\\Doctor_Office.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\Doctor_office\\Doctor_Office.csproj",
+        "projectUniqueName": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\doctor_office\\Doctor_Office.csproj",
         "projectName": "Doctor_Office",
-        "projectPath": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\Doctor_office\\Doctor_Office.csproj",
+        "projectPath": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\doctor_office\\Doctor_Office.csproj",
         "packagesPath": "C:\\Users\\lamapost0001\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\Doctor_office\\obj\\",
+        "outputPath": "C:\\Users\\lamapost0001\\desktop\\Doctor_office.solution\\doctor_office\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

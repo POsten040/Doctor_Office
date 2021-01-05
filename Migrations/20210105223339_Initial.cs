@@ -13,8 +13,7 @@ namespace Doctor_Office.Migrations
                 {
                     DoctorId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Specialty = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,6 +32,19 @@ namespace Doctor_Office.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patients", x => x.PatientId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Specialties",
+                columns: table => new
+                {
+                    SpecialtyId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Specialties", x => x.SpecialtyId);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,6 +73,32 @@ namespace Doctor_Office.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SpecialtyDoctor",
+                columns: table => new
+                {
+                    SpecialtyDoctorId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DoctorId = table.Column<int>(nullable: false),
+                    SpecialtyId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SpecialtyDoctor", x => x.SpecialtyDoctorId);
+                    table.ForeignKey(
+                        name: "FK_SpecialtyDoctor_Doctors_DoctorId",
+                        column: x => x.DoctorId,
+                        principalTable: "Doctors",
+                        principalColumn: "DoctorId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SpecialtyDoctor_Specialties_SpecialtyId",
+                        column: x => x.SpecialtyId,
+                        principalTable: "Specialties",
+                        principalColumn: "SpecialtyId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_DoctorPatient_DoctorId",
                 table: "DoctorPatient",
@@ -70,6 +108,16 @@ namespace Doctor_Office.Migrations
                 name: "IX_DoctorPatient_PatientId",
                 table: "DoctorPatient",
                 column: "PatientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SpecialtyDoctor_DoctorId",
+                table: "SpecialtyDoctor",
+                column: "DoctorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SpecialtyDoctor_SpecialtyId",
+                table: "SpecialtyDoctor",
+                column: "SpecialtyId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -78,10 +126,16 @@ namespace Doctor_Office.Migrations
                 name: "DoctorPatient");
 
             migrationBuilder.DropTable(
-                name: "Doctors");
+                name: "SpecialtyDoctor");
 
             migrationBuilder.DropTable(
                 name: "Patients");
+
+            migrationBuilder.DropTable(
+                name: "Doctors");
+
+            migrationBuilder.DropTable(
+                name: "Specialties");
         }
     }
 }

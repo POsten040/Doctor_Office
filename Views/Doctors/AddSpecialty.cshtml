@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Doctor_Office.Models.Doctor;
+
+<h2>Add a specialty</h2>
+
+<h4>Add a specialty to this doctor: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DoctorId)
+
+  @Html.Label("Select Specialty")
+  @Html.DropDownList("SpecialtyId")
+
+  <br><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br><input type="submit" value="Save" />
+}

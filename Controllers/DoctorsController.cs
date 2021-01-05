@@ -3,6 +3,7 @@ using Doctor_Office.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Doctor_Office.Controllers
 {
@@ -38,6 +39,8 @@ namespace Doctor_Office.Controllers
       Doctor thisDoctor = _db.Doctors
         .Include(Doctor => Doctor.Patients)
         .ThenInclude(join => join.Patient)
+        .Include(Doctor => Doctor.Specialties)
+        .ThenInclude(join => join.Specialty)
         .FirstOrDefault(Doctor => Doctor.DoctorId == id);
       return View(thisDoctor);
     }
@@ -52,6 +55,24 @@ namespace Doctor_Office.Controllers
     public ActionResult Edit(Doctor Doctor)
     {
       _db.Entry(Doctor).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult AddSpecialty(int id)
+    {
+      var thisDoctor = _db.Doctors.FirstOrDefault(DoctorsController => DoctorsController.DoctorId == id);
+      ViewBag.SpecialtyId = new SelectList(_db.Specialties, "SpecialtyId", "Name");
+      return View(thisDoctor);
+    }
+
+    [HttpPost]
+    public ActionResult AddSpecialty(Doctor doctor, int SpecialtyId)
+    {
+      if (SpecialtyId != 0)
+      {
+        _db.SpecialtyDoctor.Add(new SpecialtyDoctor() { SpecialtyId = SpecialtyId, DoctorId = doctor.DoctorId });
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

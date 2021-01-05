@@ -33,3 +33,9 @@ C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\bin\Debug\net
 C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\bin\Debug\netcoreapp2.2\Doctor_Office.Views.pdb
 C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Doctor_Office.Views.pdb
 C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Doctor_Office.csproj.CopyComplete
+C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Doctors\AddSpecialty.g.cshtml.cs
+C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Specialties\Create.g.cshtml.cs
+C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Specialties\Delete.g.cshtml.cs
+C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Specialties\Edit.g.cshtml.cs
+C:\Users\lamapost0001\desktop\Doctor_office.solution\Doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Specialties\Index.g.cshtml.cs
+C:\Users\lamapost0001\desktop\Doctor_office.solution\doctor_office\obj\Debug\netcoreapp2.2\Razor\Views\Specialties\Details.g.cshtml.cs

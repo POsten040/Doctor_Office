@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-@model Doctor_Office.Models.Doctor;
+@model Doctor_Office.Models.Specialty;
 
-<h2>Are you sure you want to remove this Doctor from the database?</h2>
+<h2>Are you sure you want to remove this Specialty from the database?</h2>
 
 @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.DoctorId)
+    @Html.HiddenFor(model => model.SpecialtyId)
     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span><br><input class="btn" type="submit" value="Delete" />
 }

@@ -10,5 +10,5 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PatientId)
-    <input type="submit" value="Delete" />
+    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span><br><input class ="btn" type="submit" value="Delete" />
 }
